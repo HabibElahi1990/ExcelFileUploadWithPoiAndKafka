@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>kafka-service</artifactId>
+    <version>0.0.1</version>
+
+    <parent>
+        <groupId>uploadFile</groupId>
+        <artifactId>excel</artifactId>
+        <version>0.0.1</version>
+    </parent>
+    <properties>
+        <services-version>0.0.1</services-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>uploadFile</groupId>
+            <artifactId>general-classes</artifactId>
+            <version>${services-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>uploadfile</groupId>
+            <artifactId>poi-service</artifactId>
+            <version>${services-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>uploadfile</groupId>
+            <artifactId>mongodb-service</artifactId>
+            <version>${services-version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>

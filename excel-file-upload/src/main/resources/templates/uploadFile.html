@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data" action="getExcelFile">
+    <br>
+    <br>
+    <br>
+    <br>
+    Select excel file to upload:
+    <input type="file" name="excelToUpload" id="excelToUploadId" accept=".xlsx">
+    <input type="submit" value="Upload Excel" name="submit">
+</form>
+<br>
+<br>
+<b>-----------------------------------------------------------------------------------</b>
+<br>
+<b th:text="${successMessage}"></b>
+</body>
+</html>
