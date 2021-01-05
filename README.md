@@ -1,5 +1,5 @@
 # ExcelFileUploadWithPoiAndKafka
-in this repository we determine how to use apachi poi for read excel file 
+in this repository we determine how to use apache poi for read excel file 
 
 * in this repository we have some modual for main projects classes , kafka services , poi services and finally save in the MongoDb
   * excel-file-upload
