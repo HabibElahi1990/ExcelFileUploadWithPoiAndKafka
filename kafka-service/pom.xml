@@ -9,7 +9,7 @@
 
     <parent>
         <groupId>uploadFile</groupId>
-        <artifactId>excel</artifactId>
+        <artifactId>excelFileUpload</artifactId>
         <version>0.0.1</version>
     </parent>
     <properties>

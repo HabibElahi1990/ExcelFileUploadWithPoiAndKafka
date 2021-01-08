@@ -15,9 +15,7 @@ import services.api.ReadExcelFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class DefaultReadExcelFile implements ReadExcelFile {
@@ -35,15 +33,21 @@ public class DefaultReadExcelFile implements ReadExcelFile {
             Sheet dataTypeSheet = workbook.getSheetAt(0);
             Iterator<Row> iterator = dataTypeSheet.iterator();
             int i = 0;
+            Map<Integer, String> excelHeaders=new HashMap<>();
             while (iterator.hasNext()) {
-
+                MapExcelFileCellsIntoMapCollectionParam param =null;
                 Row currentRow = iterator.next();
+                // get excel file headers
+                if (i==0){
+                    param= new MapExcelFileCellsIntoMapCollectionParam(currentRow);
+                    excelHeaders = param.getExcelHeaders();
+                }
                 if (i > 0) {
 
                     ExcelFileRows excelFileRows = new ExcelFileRows();
                     // make an object from MapExcelFileCellsIntoMapCollectionParam for map excelFile items to Map Collection
-                    MapExcelFileCellsIntoMapCollectionParam param = new MapExcelFileCellsIntoMapCollectionParam(currentRow);
-                    excelFileRows.setParams(param.toMap());
+                     param = new MapExcelFileCellsIntoMapCollectionParam(currentRow);
+                    excelFileRows.setParams(param.toMap(excelHeaders));
                     excelFileRowsList.add(excelFileRows);
                 }
                 i++;

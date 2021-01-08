@@ -11,7 +11,7 @@ public class ExcelFileRows {
     @Id
     private String id;
     private String excelFileId;
-    private Map<Integer,Object> params;
+    private Map<String,Object> params;
 
     public String getId() {
         return id;
@@ -29,11 +29,11 @@ public class ExcelFileRows {
         this.excelFileId = excelFileId;
     }
 
-    public Map<Integer, Object> getParams() {
+    public Map<String, Object> getParams() {
         return params;
     }
 
-    public void setParams(Map<Integer, Object> params) {
+    public void setParams(Map<String, Object> params) {
         this.params = params;
     }
 

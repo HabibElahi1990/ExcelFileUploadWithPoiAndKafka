@@ -19,22 +19,35 @@ public class MapExcelFileCellsIntoMapCollectionParam {
         this.row = row;
     }
 
-    public Map<Integer,Object> toMap(){
-        Map<Integer,Object> param=new HashMap<>();
+    public Map<String, Object> toMap(Map<Integer, String> excelHeaders) {
+        Map<String, Object> param = new HashMap<>();
         Iterator<Cell> cellIterator = row.iterator();
-        int i=0;
-        while (cellIterator.hasNext()){
+        int i = 0;
+        while (cellIterator.hasNext()) {
             Cell currentCell = cellIterator.next();
-            if (currentCell.getCellTypeEnum()== CellType.NUMERIC){
-                param.put(i,currentCell.getNumericCellValue());
+            if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
+                param.put(excelHeaders.get(i), currentCell.getNumericCellValue());
             }
-            if (currentCell.getCellTypeEnum()== CellType.STRING){
-                param.put(i,currentCell.getStringCellValue());
+            if (currentCell.getCellTypeEnum() == CellType.STRING) {
+                param.put(excelHeaders.get(i), currentCell.getStringCellValue());
             }
             i++;
 
         }
 
         return param;
+    }
+
+    public Map<Integer, String> getExcelHeaders() {
+        Map<Integer, String> headers = new HashMap<>();
+        Iterator<Cell> cellIterator = row.iterator();
+        int i = 0;
+        while (cellIterator.hasNext()) {
+            Cell currentCell = cellIterator.next();
+            headers.put(i, currentCell.getStringCellValue());
+            i++;
+        }
+
+        return headers;
     }
 }
