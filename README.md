@@ -1,5 +1,5 @@
 # ExcelFileUploadWithPoiAndKafka
-In this repository we have an example and determine how to use apache poi for read excel file and save all items in mongoDB
+In this repository we have an example and determine how to use apache poi for read excel file and save all items in the mongoDB
 
 * In this repository we have some module for main projects classes , kafka services , poi services and finally save in the MongoDb
   * excel-file-upload
