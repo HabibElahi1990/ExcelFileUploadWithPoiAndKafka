@@ -29,13 +29,13 @@
         </dependency>
 
         <dependency>
-            <groupId>uploadfile</groupId>
+            <groupId>uploadFile</groupId>
             <artifactId>poi-service</artifactId>
             <version>${services-version}</version>
         </dependency>
 
         <dependency>
-            <groupId>uploadfile</groupId>
+            <groupId>uploadFile</groupId>
             <artifactId>mongodb-service</artifactId>
             <version>${services-version}</version>
         </dependency>
